@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This is a react starter pack with firebase and sass.
+This is [Serene](https://serenebyazi.herokuapp.com) admin App. it contains dashboard, menu and setup.
 
 ## Getting Started with Create React App
 
