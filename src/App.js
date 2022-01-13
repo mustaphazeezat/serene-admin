@@ -3,12 +3,30 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import Home from "./pages/Home";
+import SignUP from "./pages/auth/SignUp";
+import SignIn from "./pages/auth/SignIn";
+import ForgotPassword from "./pages/auth/ForgotPassword";
+import PrivateRoute from "./routes/PrivateRoute";
+import AuthRoute from "./routes/AuthRoute";
+import Dashboard from "./pages/Dashboard";
+
 function App() {
   return (
     <Router>
         <Routes>
-            <Route exact path="/" element={<Home />} />
+          <Route path='/' element={<PrivateRoute/>}>
+            <Route path='/' element={<Dashboard/>}/>
+          </Route>
+          <Route path='/sign-up' element={<AuthRoute />}>
+            <Route path="/sign-up" element={<SignUP />} />
+          </Route>
+          <Route path='/log-in' element={<AuthRoute />}>
+            <Route path="/log-in" element={<SignIn />} />
+          </Route>
+          <Route path='/forgot-password' element={<AuthRoute />}>
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+          </Route>
+
         </Routes>
     </Router>
   );
